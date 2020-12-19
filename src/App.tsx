@@ -1,8 +1,6 @@
 import React from 'react';
 import './App.css';
-import { users } from './services/index'
-import { tweets } from './services/index'
-
+import { getUsers, getTweets } from './services/index'
 
 
 function App() {

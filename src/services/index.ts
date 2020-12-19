@@ -1,2 +1,3 @@
-export { users } from './users'
-export { tweets } from './tweets'
+export { getUsers } from './users'
+export { getTweets } from './tweets'
+
