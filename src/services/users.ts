@@ -59,16 +59,9 @@ const json_stathan: IUser = new User({
 	],
 })
 
-const users: IUsers = {
+export const users: IUsers = {
 	'evan_kol': evan_kol,
 	'john_wick': john_wick,
 	'json_stathan': json_stathan
 }
 
-export function getUsers(): Promise<{}> {
-	return new Promise((resolve, reject) => {
-		setTimeout(() => {
-			resolve({ ...users })
-		}, 1000)
-	})
-}

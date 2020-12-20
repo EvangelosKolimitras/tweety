@@ -183,10 +183,3 @@ export const tweets = {
 }
 
 
-export function getTweets(): Promise<{}> {
-	return new Promise((resolve, reject) => {
-		setTimeout(() => {
-			resolve({ ...tweets })
-		}, 1000);
-	})
-}

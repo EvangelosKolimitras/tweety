@@ -6,7 +6,7 @@ export function Navigation() {
 		<div>
 			<ul>
 				<Link to="/" title="home" >Home</Link>
-				<Link to="/tweets/:id" title="tweets">Tweets</Link>
+				<Link to="/tweets/:id" title="new_tweet">New Tweet</Link>
 			</ul>
 		</div>
 	)

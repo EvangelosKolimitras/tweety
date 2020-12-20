@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import { Navigation, Dashboard, Tweets } from './components/index'
 import { Switch, Route } from 'react-router-dom';
+import { getInitialData } from './services/index'
+
 
 function App() {
   return (
