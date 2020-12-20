@@ -1,3 +1,3 @@
 export { Dashboard } from './Dashboard'
-export { Tweets } from './Tweets'
+export { Tweet } from './Tweet'
 export { Navigation } from './Navigation'
