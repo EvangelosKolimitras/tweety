@@ -19,7 +19,7 @@ function getTweets(): Promise<{}> {
 }
 
 
-export const getInitialData = async (): Promise<Object> => {
+export const getInitialData = async (): Promise<{ users: any, tweets: any }> => {
 	const [users, tweets] = await Promise.all([getUsers(), getTweets()])
 	return { users, tweets }
 }

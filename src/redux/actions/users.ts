@@ -1,16 +1,18 @@
 
-// Action
-export const GET_USERS = 'GET_USERS'
+import { IUser } from "../../services/interface";
 
-interface GetUsersActionCreator {
-	type: typeof GET_USERS,
+// Action
+export const RECEIVE_USERS = 'RECEIVE_USERS'
+
+interface IReceiveUsersActionCreator {
+	type: typeof RECEIVE_USERS,
 	payload: Array<{}>
 }
 
 // Action creator
-export const getUsers = (users: any): GetUsersActionCreator => {
+export const receiveUsers = (users: IUser[]): IReceiveUsersActionCreator => {
 	return {
-		type: GET_USERS,
+		type: RECEIVE_USERS,
 		payload: users
 	}
 }

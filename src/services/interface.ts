@@ -10,3 +10,13 @@ export interface IUsers {
 	john_wick: IUser
 	json_stathan: IUser
 }
+
+export interface ITweet {
+	id: string
+	text: string
+	author: string
+	timestamp: number
+	likes: string[]
+	replies: string[]
+	replyingTo: null
+}

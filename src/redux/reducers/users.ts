@@ -1,11 +1,11 @@
-import { GET_USERS } from '../actions/index';
+import { RECEIVE_USERS } from '../actions/index';
 
 const initialUsersState: [] = []
 
 export const usersReducer = (state = initialUsersState, action: any) => {
 	const { type } = action
 	switch (type) {
-		case GET_USERS:
+		case RECEIVE_USERS:
 			return state
 		default:
 			return state
