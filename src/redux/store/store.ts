@@ -1,5 +1,4 @@
-import { createStore, combineReducers } from 'redux'
-import { usersReducer } from '../reducers/index'
+import { createStore } from 'redux'
+import reducersCombined from '../reducers/index'
 
-
-const store = createStore(combineReducers({ users: usersReducer }))
+const store = createStore(reducersCombined)

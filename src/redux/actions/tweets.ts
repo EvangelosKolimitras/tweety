@@ -1,12 +1,12 @@
-import { ITweet } from "../../services/interface";
+import { ITweets } from "../../services/interface";
 export const RECEIVE_TWEETS = "RECEIVE_TWEETS";
 
-interface IReceiveTweetsActionCreator {
+export interface IReceiveTweetsActionCreator {
 	type: typeof RECEIVE_TWEETS
-	payload: ITweet[]
+	payload: ITweets
 }
 
-export const receiveTweets = (tweets: ITweet[]): IReceiveTweetsActionCreator => {
+export const receiveTweets = (tweets: ITweets): IReceiveTweetsActionCreator => {
 	return {
 		type: RECEIVE_TWEETS,
 		payload: tweets

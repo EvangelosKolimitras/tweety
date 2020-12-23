@@ -6,9 +6,7 @@ export interface IUser {
 }
 
 export interface IUsers {
-	evan_kol: IUser
-	john_wick: IUser
-	json_stathan: IUser
+	[key: string]: IUser
 }
 
 export interface ITweet {
@@ -19,4 +17,7 @@ export interface ITweet {
 	likes: string[]
 	replies: string[]
 	replyingTo: null
+}
+export interface ITweets {
+	[key: string]: ITweet
 }

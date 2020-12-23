@@ -1,16 +1,16 @@
 
-import { IUser } from "../../services/interface";
+import { IUsers } from "../../services/interface";
 
 // Action
 export const RECEIVE_USERS = 'RECEIVE_USERS'
 
-interface IReceiveUsersActionCreator {
+export interface IReceiveUsersActionCreator {
 	type: typeof RECEIVE_USERS,
-	payload: Array<{}>
+	payload: IUsers
 }
 
 // Action creator
-export const receiveUsers = (users: IUser[]): IReceiveUsersActionCreator => {
+export const receiveUsers = (users: IUsers): IReceiveUsersActionCreator => {
 	return {
 		type: RECEIVE_USERS,
 		payload: users
