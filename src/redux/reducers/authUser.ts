@@ -9,7 +9,7 @@ export const authUserReducer = (state = initialState, action: ISetAuthUserAction
 	const { type, payload } = action
 	switch (type) {
 		case SET_AUTH_USER: {
-			return payload.id
+			return payload
 		}
 		default:
 			return state
