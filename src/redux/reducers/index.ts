@@ -1,15 +1,15 @@
+import { IUsers, ITweets } from './../../services/interface';
 import { combineReducers } from 'redux'
 
 import { usersReducer } from './users'
 import { tweetsReducer } from './tweets'
 import { authUserReducer } from './authUser'
-import { ITweets, IUsers } from '../../services/interface'
 
 export { usersReducer } from './users'
 export { tweetsReducer } from './tweets'
 export { authUserReducer } from './authUser'
 
-const reducersCombined: () => Function = () => combineReducers({
+const reducersCombined: Function = (): Function => combineReducers({
 	users: usersReducer,
 	tweets: tweetsReducer,
 	authUser: authUserReducer
