@@ -1,6 +1,6 @@
 // Temporary data
-type tweets = {}
-export const tweets: tweets = {
+type Tweets = {}
+export const tweets: Tweets = {
 	"8xf0y6ziyjabvozdd253nd": {
 		id: "8xf0y6ziyjabvozdd253nd",
 		text: "Shoutout to all the speakers I know for whom English is not a first language, but can STILL explain a concept well. It's hard enough to give a good talk in your mother tongue!",

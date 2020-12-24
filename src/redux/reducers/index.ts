@@ -1,4 +1,3 @@
-import { IUsers, ITweets } from './../../services/interface';
 import { combineReducers } from 'redux'
 
 import { usersReducer } from './users'
