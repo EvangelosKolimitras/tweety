@@ -2,15 +2,22 @@ import { IUsers } from '../../services/interface';
 import { RECEIVE_USERS } from '../actions/index';
 import { IReceiveUsersActionCreator } from '../actions/users'
 
-const initialState: IUsers = {}
+export interface DefaultRootState {
+	users: IUsers
+}
+
+const initialState: DefaultRootState = {
+	users: {}
+}
 
 export const usersReducer = (state = initialState, action: IReceiveUsersActionCreator) => {
 	const { type, payload } = action
+
 	switch (type) {
 		case RECEIVE_USERS:
 			return {
 				...state,
-				...payload
+				users: payload
 			}
 		default:
 			return state

@@ -8,7 +8,7 @@ export { usersReducer } from './users'
 export { tweetsReducer } from './tweets'
 export { authUserReducer } from './authUser'
 
-const reducersCombined: Function = (): Function => combineReducers({
+const reducersCombined = () => combineReducers({
 	users: usersReducer,
 	tweets: tweetsReducer,
 	authUser: authUserReducer

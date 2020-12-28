@@ -9,7 +9,7 @@ export { SET_AUTH_USER } from "./authUser"
 
 const AUTH_ID: string = "evan_kol"
 
-export const handleInitialization = (): Function => {
+export const handleInitialization = () => {
 	return async (dispatch: Function): Promise<void> => {
 		const { users, tweets } = await getInitialData();
 		dispatch(receiveUsers(users))

@@ -1,17 +1,18 @@
+import { ITweets, IUsers } from './interface';
 import { users } from './users'
 import { tweets } from './tweets'
 
 
-function getUsers(): Promise<{}> {
-	return new Promise((resolve, reject) => {
+function getUsers(): Promise<IUsers> {
+	return new Promise((resolve, _reject) => {
 		setTimeout(() => {
 			resolve({ ...users })
 		}, 1000)
 	})
 }
 
-function getTweets(): Promise<{}> {
-	return new Promise((resolve, reject) => {
+function getTweets(): Promise<ITweets> {
+	return new Promise((resolve, _reject) => {
 		setTimeout(() => {
 			resolve({ ...tweets })
 		}, 1000);
@@ -19,7 +20,7 @@ function getTweets(): Promise<{}> {
 }
 
 
-export const getInitialData = async (): Promise<{ users: any, tweets: any }> => {
+export const getInitialData = async (): Promise<{ users: IUsers, tweets: ITweets }> => {
 	const [users, tweets] = await Promise.all([getUsers(), getTweets()])
 	return { users, tweets }
 }

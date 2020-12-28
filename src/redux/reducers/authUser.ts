@@ -2,8 +2,8 @@ import { IUsers } from '../../services/interface';
 import { SET_AUTH_USER } from '../actions/index';
 import { ISetAuthUserActionCreator } from '../actions/authUser'
 
-type TinitialState = IUsers | null
-const initialState: TinitialState = {} || null
+type TInitialState = IUsers | null
+const initialState: TInitialState = {} || null
 
 export const authUserReducer = (state = initialState, action: ISetAuthUserActionCreator) => {
 	const { type, payload } = action
