@@ -2,7 +2,7 @@ import { Navigation, Dashboard, Tweet } from './components/index'
 import { Switch, Route } from 'react-router-dom';
 import { Container, Row } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
-import { memo, useEffect } from 'react';
+import { useEffect } from 'react';
 import { handleInitialization } from './redux/actions';
 
 function App() {
