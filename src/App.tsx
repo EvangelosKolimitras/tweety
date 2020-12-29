@@ -1,22 +1,17 @@
 import { Navigation, Dashboard, Tweet } from './components/index'
 import { Switch, Route } from 'react-router-dom';
 import { Container, Row } from 'react-bootstrap';
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { memo, useEffect } from 'react';
 import { handleInitialization } from './redux/actions';
-import { ITweets, IUsers } from './services/interface';
-
-interface DefaultRootState {
-  users: IUsers, tweets: ITweets
-}
 
 function App() {
   const dispatch = useDispatch()
-  const { users, tweets } = useSelector((state: DefaultRootState) => state)
-
-  useEffect(() => {
-    dispatch(handleInitialization())
-  }, [])
+  useEffect(
+    () => {
+      dispatch(handleInitialization())
+    }, []
+  )
 
   return (
     <Container>
