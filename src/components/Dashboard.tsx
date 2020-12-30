@@ -1,18 +1,20 @@
 import { Container } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
-import { DefaultRootState } from './namespaces';
 import Spinner from 'react-bootstrap/Spinner'
 import { useEffect, useState } from 'react';
+import { ITweets } from '../services/interface';
+import { Tweet } from './Tweet';
+
+interface DefaultRootState {
+	tweets: ITweets
+}
 
 export const Dashboard = () => {
-	const { tweets: t } = useSelector((state: DefaultRootState) => state.tweets)
-	const tweets = Object.values(t)
+	const { tweets } = useSelector((state: DefaultRootState) => state.tweets)
 	const [isLoaded, setIsLoaded] = useState(true);
 
 	useEffect(() => {
-		let timer = setTimeout(() => {
-			tweets !== null && setIsLoaded(!isLoaded)
-		}, 500);
+		tweets !== null && setIsLoaded(!isLoaded)
 	}, [])
 
 	return (
@@ -26,7 +28,7 @@ export const Dashboard = () => {
 				<>
 					<h1>Dashboard</h1>
 					{
-						tweets.map(tweet => <p key={tweet.id}>{tweet.id}</p>)
+						Object.values(tweets).map(tweet => <Tweet key={tweet.id} tweet={tweet} />)
 					}
 				</>
 			}
