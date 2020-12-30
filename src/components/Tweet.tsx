@@ -13,19 +13,22 @@ interface Props {
 export function Tweet(props: Props) {
 	const { users } = useSelector((state: DefaultRootState) => state.users)
 	const authUser = useSelector((state: DefaultRootState) => state.authUser)
-	const { tweet: { id, author, timestamp, text } } = props
 
-	const userObj = {
-		id,
-		author: author,
-		text: text,
-		timestamp: timestamp,
-	}
+	const {
+		tweet: {
+			id,
+			author,
+			text,
+			timestamp,
+			likes,
+			replyingTo
+		}
+	} = props
 
 	const constructTweet = () => {
 		return Object
 			.values(users)
-			.filter(user => user.id === userObj.author)
+			.filter(user => user.id === author)
 			.map(user => {
 				return (
 					<Container className="d-flex ">
@@ -36,7 +39,11 @@ export function Tweet(props: Props) {
 							<Row className="justify-content-center">
 								<Col xs={12} md={8} lg={6}>
 									<h2> {user.name} </h2>
+									{
+										replyingTo && <h6>Replying to @{replyingTo}</h6>
+									}
 									<p> {text} </p>
+									<p> Like{likes.length > 1 && "s"}: {likes.length} </p>
 									<span>{formatDate(timestamp)}</span>
 								</Col>
 							</Row>
