@@ -14,7 +14,7 @@ function App() {
   )
 
   return (
-    <Container>
+    <Container className="d-flex flex-column justify-content-center align-items-center">
       <Row>
         <header className="App-header">
           <Navigation />

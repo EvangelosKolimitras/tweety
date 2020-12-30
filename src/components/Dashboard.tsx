@@ -18,19 +18,10 @@ export const Dashboard = () => {
 	}, [])
 
 	return (
-		<Container>
-			{	isLoaded ?
-				<>
-					<Spinner animation="border" role="status">
-						<span className="sr-only">Loading...</span>
-					</Spinner>
-				</> :
-				<>
-					<h1>Dashboard</h1>
-					{
-						Object.values(tweets).map(tweet => <Tweet key={tweet.id} tweet={tweet} />)
-					}
-				</>
+		<Container className="d-flex flex-column justify-content-center align-items-center">
+			<h1>Dashboard</h1>
+			{
+				Object.values(tweets).map(tweet => <Tweet key={tweet.id} tweet={tweet} />)
 			}
 		</Container >
 	)
