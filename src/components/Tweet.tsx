@@ -2,6 +2,7 @@ import { Jumbotron, Container, Row, Col, Image } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { TID } from '../redux/actions/authUser'
 import { ITweet, IUsers } from '../services/interface'
+import { formatDate } from '../utils/utils'
 
 interface DefaultRootState {
 	users: IUsers, authUser: TID
@@ -36,7 +37,7 @@ export function Tweet(props: Props) {
 								<Col xs={12} md={8} lg={6}>
 									<h2> {user.name} </h2>
 									<p> {text} </p>
-									<span>{timestamp}</span>
+									<span>{formatDate(timestamp)}</span>
 								</Col>
 							</Row>
 						</Row>
