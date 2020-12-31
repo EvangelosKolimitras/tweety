@@ -4,7 +4,6 @@ import Spinner from 'react-bootstrap/Spinner';
 import { useEffect, useState } from 'react';
 import { ITweets } from '../services/interface';
 import { Tweet } from './Tweet';
-
 interface DefaultRootState {
 	tweets: ITweets
 }
