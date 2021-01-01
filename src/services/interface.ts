@@ -24,7 +24,7 @@ export interface ITweets {
 	[key: string]: ITweet
 }
 
-export interface ITweetLikeInfo<T> {
+export interface ITweetLikeInfo {
 	id: string
 	hasLiked: boolean
 	authUser: TID

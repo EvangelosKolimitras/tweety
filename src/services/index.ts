@@ -29,4 +29,4 @@ export const getInitialData = async (): Promise<{ users: IUsers, tweets: ITweets
  * 
  * @param info 
  */
-export const saveLikeToggle = <T extends ITweetLikeInfo<object>>(info: T): any => _saveLikeToggle(info)
+export const saveLikeToggle = (info: ITweetLikeInfo): any => _saveLikeToggle(info)

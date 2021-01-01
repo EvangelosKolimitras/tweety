@@ -188,7 +188,7 @@ export let tweets: ITweets = {
  * 
  * @param info 
  */
-export const _saveLikeToggle = <T extends ITweetLikeInfo<T>>(info: T): Promise<any> => {
+export const _saveLikeToggle = (info: ITweetLikeInfo): Promise<any> => {
 	const { id, hasLiked, authUser } = info
 	return new Promise((res: any, _rej) => {
 		setTimeout(() => {

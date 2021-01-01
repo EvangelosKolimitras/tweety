@@ -20,19 +20,19 @@ export const receiveTweets = (tweets: ITweets): IReceiveTweetsActionCreator => (
 
 export interface IToggleTweetActionCreator {
 	type: typeof TOGGLE_TWEET
-	payload: ITweetLikeInfo<object>
+	payload: ITweetLikeInfo
 }
 
 /**
  * 
  * @param info object
  */
-const toggleTweet = <T extends ITweetLikeInfo<object>>(info: T): IToggleTweetActionCreator => ({
+const toggleTweet = (info: ITweetLikeInfo): IToggleTweetActionCreator => ({
 	type: TOGGLE_TWEET,
 	payload: info
 })
 
-export const toggleTweetAsyncAC = <T extends ITweetLikeInfo<object>>(info: T): Function => {
+export const toggleTweetAsyncAC = (info: ITweetLikeInfo): Function => {
 	return async (dispatch: Function): Promise<any> => {
 		dispatch(toggleTweet(info))
 		try {
