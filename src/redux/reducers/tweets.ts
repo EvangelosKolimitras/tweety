@@ -1,4 +1,3 @@
-import { ITweet, ITweetLikeInfo } from './../../services/interface';
 import { ITweets } from '../../services/interface';
 import { RECEIVE_TWEETS, TOGGLE_TWEET } from '../actions/index';
 import { ActionType } from '../actions/tweets';
@@ -34,8 +33,8 @@ export const tweetsReducer = (state = initialState, action: ActionType) => {
 				tweets: {
 					...state.tweets,
 					[stringedID]: {
-						likes: payload.hasLiked == true
-							? state.tweets[stringedID].likes.filter((id: string) => id == payload.authUser)
+						likes: payload.hasLiked === true
+							? state.tweets[stringedID].likes.filter((id: string) => id === payload.authUser)
 							: state.tweets[stringedID].likes.concat([payload.authUser] as [authUser: TID])
 					}
 				}
