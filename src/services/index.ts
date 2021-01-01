@@ -1,7 +1,8 @@
+
 import { ITweets, IUsers } from './interface';
 import { users } from './users'
-import { tweets } from './tweets'
-
+import { tweets, _saveLikeToggle } from './tweets'
+import { ITweetLikeInfo } from './interface'
 
 function getUsers(): Promise<IUsers> {
 	return new Promise((resolve, _reject) => {
@@ -19,8 +20,13 @@ function getTweets(): Promise<ITweets> {
 	})
 }
 
-
 export const getInitialData = async (): Promise<{ users: IUsers, tweets: ITweets }> => {
 	const [users, tweets] = await Promise.all([getUsers(), getTweets()])
 	return { users, tweets }
 }
+
+/**
+ * 
+ * @param info 
+ */
+export const saveLikeToggle = <T extends ITweetLikeInfo<object>>(info: T): any => _saveLikeToggle(info)

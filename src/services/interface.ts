@@ -1,3 +1,5 @@
+import { TID } from "../redux/actions/authUser";
+
 export interface IUser {
 	id: string
 	name: string
@@ -16,8 +18,14 @@ export interface ITweet {
 	timestamp: number
 	likes: string[]
 	replies: string[]
-	replyingTo: null
+	replyingTo: null | string
 }
 export interface ITweets {
 	[key: string]: ITweet
+}
+
+export interface ITweetLikeInfo<T> {
+	id: string
+	hasLiked: boolean
+	authUser: TID
 }

@@ -1,6 +1,5 @@
 import { Container } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
-import Spinner from 'react-bootstrap/Spinner';
 import { useEffect, useState } from 'react';
 import { ITweets } from '../services/interface';
 import { Tweet } from './Tweet';

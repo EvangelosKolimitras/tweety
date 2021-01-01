@@ -5,7 +5,7 @@ import { setAuthUser } from "./authUser"
 import { showLoading, hideLoading } from 'react-redux-loading'
 
 export { RECEIVE_USERS } from "./users"
-export { RECEIVE_TWEETS } from "./tweets"
+export { RECEIVE_TWEETS, TOGGLE_TWEET } from "./tweets"
 export { SET_AUTH_USER } from "./authUser"
 
 const AUTH_ID: string = "evan_kol"

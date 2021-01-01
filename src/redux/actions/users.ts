@@ -9,7 +9,10 @@ export interface IReceiveUsersActionCreator {
 	payload: IUsers
 }
 
-// Action creator
+/**
+ * 
+ * @param users 
+ */
 export const receiveUsers = (users: IUsers): IReceiveUsersActionCreator => {
 	return {
 		type: RECEIVE_USERS,

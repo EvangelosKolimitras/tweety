@@ -5,6 +5,11 @@ import { ISetAuthUserActionCreator } from '../actions/authUser'
 type TInitialState = IUsers | null
 const initialState: TInitialState = {} || null
 
+/**
+ * 
+ * @param state 
+ * @param action 
+ */
 export const authUserReducer = (state = initialState, action: ISetAuthUserActionCreator) => {
 	const { type, payload } = action
 	switch (type) {

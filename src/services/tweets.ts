@@ -1,6 +1,7 @@
+import { ITweetLikeInfo, ITweets } from "./interface"
+
 // Temporary data
-type Tweets = {}
-export const tweets: Tweets = {
+export let tweets: ITweets = {
 	"8xf0y6ziyjabvozdd253nd": {
 		id: "8xf0y6ziyjabvozdd253nd",
 		text: "Shoutout to all the speakers I know for whom English is not a first language, but can STILL explain a concept well. It's hard enough to give a good talk in your mother tongue!",
@@ -183,4 +184,24 @@ export const tweets: Tweets = {
 	},
 }
 
-
+/**
+ * 
+ * @param info 
+ */
+export const _saveLikeToggle = <T extends ITweetLikeInfo<T>>(info: T): Promise<any> => {
+	const { id, hasLiked, authUser } = info
+	return new Promise((res: any, _rej) => {
+		setTimeout(() => {
+			tweets = {
+				...tweets,
+				[id]: {
+					...tweets[id],
+					likes: hasLiked === true
+						? tweets[id].likes.filter((uid) => uid !== authUser)
+						: tweets[id].likes.concat([authUser])
+				}
+			}
+			res()
+		}, 500)
+	})
+}

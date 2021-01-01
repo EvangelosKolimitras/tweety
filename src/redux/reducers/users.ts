@@ -10,6 +10,11 @@ const initialState: DefaultRootState = {
 	users: {}
 }
 
+/**
+ * 
+ * @param state 
+ * @param action 
+ */
 export const usersReducer = (state = initialState, action: IReceiveUsersActionCreator) => {
 	const { type, payload } = action
 
